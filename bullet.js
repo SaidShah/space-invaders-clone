@@ -1,12 +1,12 @@
 function Bullet(x,y) {
   this.x = x;
   this.y = y;
-  this.r = 3.5;
+  this.r = 4;
   this.deleteBullet = false;
 
   this.show = ((bullet)=>{
     fill(255)
-    ellipse(this.x+3 ,this.y+4,this.r*2,this.r*2)
+    image(bulletImg,this.x ,this.y+4,this.r*2,this.r*2)
   })
 
   this.move=((dir)=>{
@@ -14,7 +14,7 @@ function Bullet(x,y) {
   })
 
   this.hits = ((asteroid)=>{
-    var d = dist(this.x, this.y, (asteroid.x-asteroid.asteroidWidth/2), (asteroid.y-asteroid.asteroidWidth/2))
+    var d = dist(this.x, this.y, (asteroid.x-asteroid.asteroidWidth/2-4), (asteroid.y-asteroid.asteroidWidth/2-4))
     if(d < this.r + asteroid.asteroidWidth){
       return true;
     }else {

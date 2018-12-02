@@ -4,6 +4,17 @@ var bullets=[];
 var scoreBoard;
 var index;
 var bg;
+var spaceShipImg;
+var bulletImg;
+var enemyImages = [];
+
+function preload() {
+	spaceShipImg = loadImage("images/space-ship.png")
+	bulletImg = loadImage("images/bullet.png")
+	for(let i =0;i< 3; i++){
+		enemyImages[i] = loadImage(`images/enemy_${i+1}.png`)
+	}
+}
 
 function setup() {
 
@@ -13,14 +24,16 @@ function setup() {
 	index = new Index();
 	index.placeCanvas();
 	bg = loadImage("images/space.jpg")
+
 	for(var i = 0; i< 40; i++){
-		asteroids[i] = new Asteroid();
+		asteroids[i] = new Asteroid(enemyImages[floor(random(0,enemyImages.length))]);
 	}
 }
 
 function draw() {
 
 	background(bg);
+
 	for (var i = 0; i < bullets.length; i++) {
 		bullets[i].show()
 		bullets[i].move()
@@ -48,7 +61,7 @@ function draw() {
 	for (var i = asteroids.length-1; i >=0 ; i--) {
 		if(asteroids[i].deleteAsteroid){
 			asteroids.splice(i,1)
-			let asteroid = new Asteroid()
+			let asteroid = new Asteroid(enemyImages[floor(random(0,enemyImages.length))])
 			asteroids.push(asteroid)
 		}
 	}
