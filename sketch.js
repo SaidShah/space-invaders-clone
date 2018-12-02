@@ -7,6 +7,7 @@ var bg;
 var spaceShipImg;
 var bulletImg;
 var enemyImages = [];
+var shoot = false;
 
 function preload() {
 	spaceShipImg = loadImage("images/space-ship.png")
@@ -72,18 +73,14 @@ function draw() {
 
  }
 
-function keyReleased() {
-	if(key != " "){
-	spaceShip.setDirection(0)
- }
-}
-
 
 function keyPressed() {
-	if (key===' ') {
-		var bullet = new Bullet(spaceShip.shipX,height-67)
-		bullets.push(bullet)
-	}
+	 if (key===' ') {
+		 shoot = true;
+	 	var bullet = new Bullet(spaceShip.shipX,height-67)
+	 	bullets.push(bullet)
+	 }
+
 	if(keyCode===RIGHT_ARROW){
 		spaceShip.setDirection(1);
 	}else if(keyCode === LEFT_ARROW){
