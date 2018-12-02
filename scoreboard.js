@@ -1,5 +1,5 @@
 function ScoreBoard() {
- let timer = 5;
+ let timer = 25;
 
   this.addPoint = function() {
     const addPt = document.getElementById("total-points").innerText

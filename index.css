@@ -1,5 +1,5 @@
 body{
-
+ background-color: rgb(230, 236, 255);
 }
 
 canvas {
@@ -9,7 +9,7 @@ canvas {
 }
 
 .plus-points{
-  color: rgb(140,255,150);
+  color: rgb(0, 153, 0);
 }
 
 .minus-points{

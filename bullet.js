@@ -1,7 +1,7 @@
 function Bullet(x,y) {
   this.x = x;
   this.y = y;
-  this.r = 2.5;
+  this.r = 3.5;
   this.deleteBullet = false;
 
   this.show = ((bullet)=>{
@@ -10,7 +10,7 @@ function Bullet(x,y) {
   })
 
   this.move=((dir)=>{
-    this.y = this.y - 5
+    this.y = this.y - 8
   })
 
   this.hits = ((asteroid)=>{

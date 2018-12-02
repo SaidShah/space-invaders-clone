@@ -2,19 +2,25 @@ var spaceShip;
 var asteroids=[];
 var bullets=[];
 var scoreBoard;
-
+var index;
+var bg;
 
 function setup() {
-	createCanvas(windowWidth*.8, windowHeight*.5);
+
+	createCanvas(windowWidth*.8, windowHeight*.6);
 	spaceShip = new SpaceShip();
 	scoreBoard = new ScoreBoard();
-	for(var i = 0; i< 35; i++){
+	index = new Index();
+	index.placeCanvas();
+	bg = loadImage("images/space.jpg")
+	for(var i = 0; i< 40; i++){
 		asteroids[i] = new Asteroid();
 	}
 }
 
 function draw() {
-	background(20,20,0);
+
+	background(bg);
 	for (var i = 0; i < bullets.length; i++) {
 		bullets[i].show()
 		bullets[i].move()
