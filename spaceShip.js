@@ -15,7 +15,14 @@ function SpaceShip() {
   })
 
   this.move = ((dir)=>{
-    this.shipX += this.xDirection*6;
+  //
+    if(this.shipX+36>=width){
+      this.shipX = width-36
+    }else if(this.shipX <= 29 ){
+      this.shipX = 30
+    }
+      this.shipX += this.xDirection*6;
+
   })
 
 
