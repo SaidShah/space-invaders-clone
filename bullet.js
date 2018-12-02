@@ -6,7 +6,7 @@ function Bullet(x,y) {
 
   this.show = ((bullet)=>{
     fill(255)
-    ellipse(this.x,this.y,this.r*2,this.r*2)
+    ellipse(this.x+3 ,this.y+4,this.r*2,this.r*2)
   })
 
   this.move=((dir)=>{

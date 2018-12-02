@@ -1,5 +1,6 @@
 function SpaceShip() {
   this.shipX = width/2
+  this.xDirection = 0;
 
   this.show = ((ship)=>{
     noStroke()
@@ -9,9 +10,15 @@ function SpaceShip() {
     rect(this.shipX-27,height - 40, 60,20)
   })
 
-  this.move = ((dir)=>{
-    this.shipX+=dir
+  this.setDirection =((dir)=>{
+    this.xDirection = dir;
   })
+
+  this.move = ((dir)=>{
+    this.shipX += this.xDirection*6;
+  })
+
+
 
 
 

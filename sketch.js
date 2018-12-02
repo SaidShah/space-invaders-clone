@@ -44,7 +44,14 @@ function draw() {
 	}
 
 	spaceShip.show();
+	spaceShip.move();
 
+}
+
+function keyReleased() {
+	if(key != " "){
+	spaceShip.setDirection(0)
+ }
 }
 
 function keyPressed() {
@@ -53,8 +60,8 @@ function keyPressed() {
 		bullets.push(bullet)
 	}
 	if(keyCode===RIGHT_ARROW){
-		spaceShip.move(5);
+		spaceShip.setDirection(1);
 	}else if(keyCode === LEFT_ARROW){
-		spaceShip.move(-5);
+		spaceShip.setDirection(-1);
 	}
 }
