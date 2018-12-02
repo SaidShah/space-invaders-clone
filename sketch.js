@@ -7,7 +7,7 @@ var bg;
 var spaceShipImg;
 var bulletImg;
 var enemyImages = [];
-var shoot = false;
+var alienMusic;
 
 function preload() {
 	spaceShipImg = loadImage("images/space-ship.png")
@@ -15,17 +15,17 @@ function preload() {
 	for(let i =0;i< 3; i++){
 		enemyImages[i] = loadImage(`images/enemy_${i+1}.png`)
 	}
+	alienMusic = loadSound("audio/alien-music.wav")
 }
 
 function setup() {
 
 	createCanvas(windowWidth*.8, windowHeight*.6);
 	spaceShip = new SpaceShip();
-	scoreBoard = new ScoreBoard();
+	scoreBoard = new ScoreBoard(alienMusic);
 	index = new Index();
 	index.placeCanvas();
 	bg = loadImage("images/space.jpg")
-
 	for(var i = 0; i< 40; i++){
 		asteroids[i] = new Asteroid(enemyImages[floor(random(0,enemyImages.length))]);
 	}

@@ -1,6 +1,8 @@
-function ScoreBoard() {
- let timer = 4;
-
+function ScoreBoard(givenMusic) {
+ let timer = 25;
+ this.alienMusic = givenMusic
+ alienMusic.play()
+ alienMusic.rate(.6)
   this.addPoint = function() {
     const addPt = document.getElementById("total-points").innerText
     let addPtInt = parseInt(addPt)
@@ -14,6 +16,7 @@ function ScoreBoard() {
   }
 
   this.timerCounter = function() {
+
     let timerShown = document.getElementsByClassName("countDown")
     if (frameCount % 60 === 0 && timer > 0) {
       //timer--;
@@ -22,8 +25,8 @@ function ScoreBoard() {
     }
     if (timer === 0) {
       timerShown[0].innerText = "Time Is UP"
-      
       timerShown[0].style.color = "red"
+      noloop()
     }
 
   }
