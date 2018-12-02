@@ -1,13 +1,14 @@
 var spaceShip;
 var asteroids=[];
 var bullets=[];
+var scoreBoard;
+
 
 function setup() {
-
-	createCanvas(windowWidth*.95, windowHeight*.8);
+	createCanvas(windowWidth*.8, windowHeight*.5);
 	spaceShip = new SpaceShip();
-	//bullet = new Bullet(width/2, height/2);
-	for(var i = 0; i< 15; i++){
+	scoreBoard = new ScoreBoard();
+	for(var i = 0; i< 35; i++){
 		asteroids[i] = new Asteroid();
 	}
 }
@@ -22,13 +23,14 @@ function draw() {
 			if(bullets[i].hits(asteroids[j])){
 				bullets[i].removeBullet(true)
 				asteroids[j].removeAsteroid(true)
+				scoreBoard.addPoint()
 			}
 		}
 	}
 
 	for(var i = 0; i< asteroids.length; i++){
 		asteroids[i].show();
-		asteroids[i].move();
+		asteroids[i].move(scoreBoard);
 	}
 
 	for (var i = bullets.length-1; i >= 0 ; i--) {
@@ -40,19 +42,23 @@ function draw() {
 	for (var i = asteroids.length-1; i >=0 ; i--) {
 		if(asteroids[i].deleteAsteroid){
 			asteroids.splice(i,1)
+			let asteroid = new Asteroid()
+			asteroids.push(asteroid)
 		}
 	}
 
 	spaceShip.show();
 	spaceShip.move();
+	scoreBoard.timerCounter();
 
-}
+ }
 
 function keyReleased() {
 	if(key != " "){
 	spaceShip.setDirection(0)
  }
 }
+
 
 function keyPressed() {
 	if (key===' ') {

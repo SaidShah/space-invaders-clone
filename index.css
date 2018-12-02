@@ -7,3 +7,22 @@ canvas {
  top:50;bottom:5;right:0;left:0;
  margin:auto;
 }
+
+.plus-points{
+  color: rgb(140,255,150);
+}
+
+.minus-points{
+  color: rgb(255,80,79);
+}
+
+.timer{
+  padding-left: 500px;
+  font-size: 50px;
+}
+
+.countDown{
+  padding-left: 20px;
+  font-size: 50px;
+  color: blue;
+}

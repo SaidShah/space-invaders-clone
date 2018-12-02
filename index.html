@@ -14,6 +14,8 @@
 	<script src="spaceShip.js"></script>
 	<script src="asteroid.js"></script>
 	<script src="Bullet.js"></script>
+	<script src="ScoreBoard.js"></script>
+
 	<!-- <style>
 		body {
 			margin:0;
@@ -28,7 +30,9 @@
 <body>
 	<div class="canvas-container">
 			<canvas id="canvas" ></canvas>
-			<h2>ScoreBoard</h2>
+			<h2 id="scoreboard">ScoreBoard <span class="timer">Timer</span><span class="countDown"></span></h2>
+			<h3 class="plus-points">Total Points: <span id="total-points">0</span></h3>
+			<h3 class="minus-points">Total Misses: <span id="less-points">0</span></h3><br><br><br>
 	</div>
 </body>
 </html>

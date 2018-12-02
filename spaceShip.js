@@ -21,7 +21,7 @@ function SpaceShip() {
     }else if(this.shipX <= 29 ){
       this.shipX = 30
     }
-      this.shipX += this.xDirection*6;
+      this.shipX += this.xDirection*8;
 
   })
 
